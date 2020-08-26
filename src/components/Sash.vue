@@ -6,6 +6,14 @@
             <line :x1="width-0" :x2="width-(sashThickness)" :y1="0" :y2="sashThickness" stroke="#000000" style="stroke-width: 0.2;"></line>
             <line :x1="0" :x2="sashThickness" :y1="height-0" :y2="height-(sashThickness)" stroke="#000000" style="stroke-width: 0.2;"></line>
             <line :x1="width-0" :x2="width-(sashThickness)" :y1="height-0" :y2="height-(sashThickness)" stroke="#000000" style="stroke-width: 0.2;"></line>
+            <g v-if="otwieranie.indexOf('U')>=0">   
+                <line :x1="sashThickness" :y1="height-sashThickness" :x2="width/ 2" :y2="sashThickness" stroke="#0033">  </line>
+                <line :x1="width/ 2" :y1="sashThickness" :x2="width - sashThickness" :y2="height - sashThickness" stroke="#0033" >  </line>
+            </g>    
+            <g v-if="otwieranie.indexOf('R')>=0">
+                <line :x1="sashThickness" :y1="sashThickness" :x2="width - sashThickness" :y2="height/2" stroke="#0033">  </line>
+                <line :x1="sashThickness" :y1="height-sashThickness" :x2="width - sashThickness" :y2="height/2" stroke="#0033" >  </line>
+            </g>    
         </g>
     
 
@@ -16,7 +24,7 @@
 <script>
 export default {
     props:[
-        'sashThickness','width','height'
+        'sashThickness','width','height','otwieranie'
     ]
     
 }

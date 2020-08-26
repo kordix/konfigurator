@@ -13,8 +13,6 @@
     <div v-if="unproportionalSashes" style="margin-top:20px;margin-bottom:20px">
         <label for="">Szerokość pierwszego skrzydła</label>
         <input type="number" v-model="sash1WidthManual" step="50" >
-           <label for="">Szerokość drugiego skrzydła</label>
-        <input type="number" v-model="sash2WidthManual" step="50" >
 
     </div>
 </div>
@@ -36,13 +34,15 @@
         <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
         <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="'RU'"></sash>
         <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'"></sash>
+        <sash :transform="'translate('+sash3.x+','+sash3.y+')'" :width="sash3.width" :height="sash3.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'"></sash>
 
-         <g id="klamka1">
-            <rect :x="(sash1.width) - 16" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
+
+        <g id="klamka1">
+            <rect :x="(sash1.width) - 16" :y="height / 2" width="18.823529411764802" height="18.823529411764802" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
             <rect :x="(sash1.width) - 12.4" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2" style="fill-opacity: 1;"></rect>
         </g>
         <g id="klamka2">
-            <rect :x="sash1.width + 25" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
+            <rect :x="sash1.width + 25" :y="height / 2" width="18.823529411764802" height="18.823529411764802" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
             <rect :x="sash1.width + 28.6" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2"  style="fill-opacity: 1;"></rect>
         </g>
        
@@ -93,9 +93,6 @@ export default {
         },
         sash1WidthManual(){
             this.calculateWindow()
-        },
-        sash2WidthManual(){
-            this.calculateWindow()
         }
     },
    
@@ -103,41 +100,44 @@ export default {
         return {
             y: 50,
             height: 300,
-            width: 600,
+            width: 800,
             OFthickness:40,
             transomThickness:10,
             sashDiff: 10,
             sash1:{x:0,y:0, width:200,height:300, thickness:30},
             sash2: {x:0,y:0, width:200,height:300, thickness:30},
+            sash3: {x:0,y:0, width:200,height:300, thickness:30},
             sashThickness: 30,
             unproportionalSashes:false,
-            sash1WidthManual:0,
-            sash2WidthManual:0
+            sash1WidthManual:0
+
         }
     },
     methods:{
         calculateWindow(){
-            this.width = parseInt(this.width);this.height = parseInt(this.height);
+            this.width = parseInt(this.width);this.height = parseInt(this.height); 
             this.transomThickness = parseInt(this.transomThickness);
             this.sash1WidthManual = parseInt(this.sash1WidthManual);
 
             this.sash1.x = this.sashDiff;
             this.sash1.y = this.sashDiff;
             this.sash1.height = this.height - 2* this.sashDiff;
-            let defaultSashWidth = (this.width / 2) - ((this.transomThickness) / 2) - this.sashDiff
+            let defaultSashWidth = (this.width / 3) - ((this.transomThickness) / 2) - this.sashDiff
             if (!this.unproportionalSashes){
                 this.sash1.width = defaultSashWidth;
-            }else if(this.sash1WidthManual)
-            {
+            }else{
                 this.sash1.width = this.sash1WidthManual
-            }else if (this.sash2WidthManual){
-                this.sash1.width = this.width - this.sash2WidthManual - 2*(this.sashDiff) - (this.transomThickness)
             }
-
             this.sash2.x = this.sash1.x + this.sash1.width + this.transomThickness;
             this.sash2.y = this.sashDiff;
             this.sash2.height = this.height - 2* this.sashDiff;
-            this.sash2.width = this.width - this.sash1.width - 2*(this.sashDiff) - (this.transomThickness)
+            this.sash2.width = defaultSashWidth;
+            // this.sash2.width = this.width - this.sash1.width - 2*(this.sashDiff) - (this.transomThickness)
+
+            this.sash3.x = this.sash2.x + this.sash2.width + this.transomThickness;
+            this.sash3.y = this.sashDiff;
+            this.sash3.height = this.height - 2* this.sashDiff;
+            this.sash3.width = defaultSashWidth;
 
             // this.sash2.x = this.sash1.x + this.sash1.width;
         }
