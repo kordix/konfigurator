@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <window></window>
 <p><b>To do:</b></p>
     <ul>
@@ -24,7 +24,6 @@ import Sash from './components/Sash.vue'
 
 
 export default {
-  name: 'App',
   components: {
     Window,Sash
   }
@@ -32,12 +31,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
