@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import window from './components/Window'
+import app from './App'
+import test from './components/test'
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -10,7 +11,11 @@ export default new VueRouter({
     routes:[
         {
             path:'/',
-            component: window
+            component: app
+        },
+        {
+            path:'/test',
+            component: test
         }
     ]
 })
