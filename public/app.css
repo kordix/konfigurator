@@ -1,0 +1,72 @@
+html, body{
+    height:100%!important;
+/*     background: #FFFCF0!important; */
+}
+.getheight{
+    height: calc(100% - 150px);
+    background: white;
+}
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px;
+    border-width: 3px;
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+} 
+.btn-circle.btn-md { 
+    width: 50px; 
+    height: 50px; 
+    padding: 7px 10px; 
+    border-radius: 25px; 
+    font-size: 10px; 
+    text-align: center; 
+} 
+.btn-circle.btn-xl { 
+    width: 70px; 
+    height: 70px; 
+    border-radius: 100%; 
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center; 
+    border-width: 5px;
+}
+.line{
+    border-bottom: 3px solid #007bff98;
+    width: calc(100% /6 - 120px);
+    height: 35px;
+
+}
+
+.component-slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .component-slide-fade-leave-active{
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .component-slide-fade-enter
+{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .component-slide-fade-leave-to{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .component-slide-out-enter-active {
+    transition: all .3s ease;
+  }
+  .component-slide-out-leave-active{
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .component-slide-out-enter
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .component-slide-out-leave-to{
+    transform: translateX(100%);
+    opacity: 0;
+  }
