@@ -1,9 +1,12 @@
 <template>
-<div class="container" style="height:100%">
-  <mainhead></mainhead>
-  <router-view></router-view>
-  <mainfoot></mainfoot>
+<div style="background:#f8f9fa!important">
 
+    <mainhead></mainhead>
+  <div class="container" style="height:100%">
+    <router-view></router-view>
+
+  </div>
+    <mainfoot></mainfoot>
 </div>
 
 </template>

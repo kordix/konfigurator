@@ -6,7 +6,7 @@
             <stepper></stepper>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="height:100%; background:white">
         <div class="col-7">
             <transition :name="$root.transition" mode="out-in">
                 <component v-bind:is="view"></component>

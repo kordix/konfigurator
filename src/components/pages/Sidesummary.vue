@@ -1,5 +1,5 @@
 <template>
-<div class="card  my-3" style="width: 100%; display:inline-flex; background:#BEC3C8">
+<div class="card  my-3" style="width: 100%; display:inline-flex; background:#2B6F6F; color:white">
     <!--         <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Podsumowanie</h5>

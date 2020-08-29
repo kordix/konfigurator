@@ -3,7 +3,7 @@
     <template v-for="step of steps">
         <div :key="step.num">
         <button @click="changePanel(step.num)" class="btn btn-circle btn-xl" :class="{'btn-outline-primary':$root.activepanel==step.num}" :style="{background:bgcolor(step.num)}" type="submit">{{step.num}}</button>
-        <div class="text-center my-3 text-primary font-weight-bold">{{step.label}}</div>
+        <div class="text-center my-2 font-weight-bold step-title" style="font-size:0.9rem">{{step.label}}</div>
 
         </div>
         <div class="line" :key="step.label" v-if="step.num != 7"></div>
@@ -28,18 +28,18 @@ export default {
                 {num: 4, label: 'Szklenie'},
                 {num: 5, label: 'Kolor'},
                 {num: 6, label: 'Dodatki'},
-                {num: 7, label: 'Podsumowanie'}
+                {num: 7, label: 'Razem'}
             ]
         }
     },
     methods:{
         bgcolor(num){
             if(this.$root.activepanel<num){
-                return '#007bff98'
+                return '#1d315fa8'
             } else if(this.$root.activepanel==num){
-                return '#007bffab' 
+                return '#1d315fa8' 
             } else {
-                return '#007bff'
+                return '#1D315F'
             }
              
         }

@@ -1,9 +1,14 @@
 html, body{
     height:100%!important;
-/*     background: #FFFCF0!important; */
+    background:#f8f9fa!important
+}
+.btn-outline-primary{
+  border-color:#1D315F!important;
 }
 .getheight{
     height: calc(100% - 150px);
+/*     height: calc(100vh - 150px); */
+height: 73vh;
     background: white;
 }
 .btn-circle.btn-sm { 
@@ -22,22 +27,26 @@ html, body{
     border-radius: 25px; 
     font-size: 10px; 
     text-align: center; 
+    background: #1d315fa8;
 } 
 .btn-circle.btn-xl { 
-    width: 70px; 
-    height: 70px; 
+    width: 50px; 
+    height: 50px; 
     border-radius: 100%; 
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     font-weight: bold;
     text-align: center; 
     border-width: 5px;
 }
 .line{
-    border-bottom: 3px solid #007bff98;
-    width: calc(100% /6 - 120px);
-    height: 35px;
+    border-bottom: 3px solid #1D315F;
+    width: calc(100% /6 - 90px);
+    height: 25px;
 
+}
+.step-title{
+  color:#1D315F;
 }
 
 .component-slide-fade-enter-active {
@@ -69,4 +78,7 @@ html, body{
   .component-slide-out-leave-to{
     transform: translateX(100%);
     opacity: 0;
+  }
+  .btn-primary{
+    background: #2B6F6F!important;
   }

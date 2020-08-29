@@ -1,8 +1,6 @@
 <template>
 
 <div class="container-fluid">
-
-
         <div class="card mx-3 my-3" style="width: 100%; display:inline-flex">
     <!--         <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
@@ -13,9 +11,6 @@
                 <button class="btn btn-primary d-block mt-2" @click="changePanel(4, 'none')">Dalej</button>
             </div>
         </div>
-        
-
-
 </div>
 
     
