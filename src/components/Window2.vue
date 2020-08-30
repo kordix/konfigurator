@@ -17,18 +17,6 @@
         <input type="number" v-model="sash2WidthManual" step="50" >
 
     </div>
-
-    <select name="" id="" v-model="otwieranie">
-        <option value="RU">RU</option>
-        <option value="R">R</option>
-        <option value="U">U</option>
-        <option value="FIXS">FIX w skrzydle</option>
-        <option value="FIX">FIX w ramie</option>
-    </select>
-    <select name="" id="" v-model="kierunek">
-        <option value="L">L</option>
-        <option value="R">R</option>
-    </select>
 </div>
 
 <svg :width="width+200" :height="parseInt(height)+100">
@@ -46,7 +34,18 @@
 
     <g transform="translate(0,55)" id="okno">
         <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
-        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="otwieranie" :kierunek="kierunek"></sash>
+        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="'RU'"></sash>
+        <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'" v-if="!unproportionalSashes"></sash>
+
+         <g id="klamka1">
+            <rect :x="(sash1.width) - 16" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
+            <rect :x="(sash1.width) - 12.4" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2" style="fill-opacity: 1;"></rect>
+        </g>
+        <g id="klamka2" v-if="!unproportionalSashes">>
+            <rect :x="sash1.width + 25" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
+            <rect :x="sash1.width + 28.6" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2"  style="fill-opacity: 1;"></rect>
+        </g>
+       
     </g>
 
     <g id="wymiarprawy">
@@ -104,7 +103,7 @@ export default {
         return {
             y: 50,
             height: 300,
-            width: 300,
+            width: 600,
             OFthickness:40,
             transomThickness:10,
             sashDiff: 10,
@@ -113,9 +112,7 @@ export default {
             sashThickness: 30,
             unproportionalSashes:false,
             sash1WidthManual:0,
-            sash2WidthManual:0,
-            otwieranie:'RU',
-            kierunek:'L'
+            sash2WidthManual:0
         }
     },
     methods:{
@@ -127,9 +124,20 @@ export default {
             this.sash1.x = this.sashDiff;
             this.sash1.y = this.sashDiff;
             this.sash1.height = this.height - 2* this.sashDiff;
-            this.sash1.width  = (this.width)  - 2*this.sashDiff
+            let defaultSashWidth = (this.width / 2) - ((this.transomThickness) / 2) - this.sashDiff
+            if (!this.unproportionalSashes){
+                this.sash1.width = defaultSashWidth;
+            }else if(this.sash1WidthManual)
+            {
+                this.sash1.width = this.sash1WidthManual
+            }else if (this.sash2WidthManual){
+                this.sash1.width = this.width - this.sash2WidthManual - 2*(this.sashDiff) - (this.transomThickness)
+            }
 
-
+            this.sash2.x = this.sash1.x + this.sash1.width + this.transomThickness;
+            this.sash2.y = this.sashDiff;
+            this.sash2.height = this.height - 2* this.sashDiff;
+            this.sash2.width = this.width - this.sash1.width - 2*(this.sashDiff) - (this.transomThickness)
 
             // this.sash2.x = this.sash1.x + this.sash1.width;
         }

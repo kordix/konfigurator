@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <window></window>
+    <window2></window2>
 <p><b>To do:</b></p>
     <ul>
       <li>Picker z systemami okien</li>
@@ -19,6 +19,8 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Window from './components/Window.vue'
+
+import Window2 from './components/Window2.vue'
 import Sash from './components/Sash.vue'
 
 
@@ -26,7 +28,7 @@ import Sash from './components/Sash.vue'
 export default {
   name: 'App',
   components: {
-    Window,Sash
+    Window2,Sash,Window
   }
 }
 </script>
