@@ -10,7 +10,7 @@
             </g>
             <g v-if="otwieranie == 'FIX'">
                 <!-- <rect :width="width" :height="height - 2* 0" :x="0" :y="0" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect> -->
-                <rect :width="width - 2* (sashThickness/2)" :height="height - (sashThickness)" :x="sashThickness/2" :y="sashThickness/2" fill="#0195af" stroke="#000000" style="fill-opacity: 0.6; stroke-width: 1;"></rect>
+                <rect :width="width - 2* (OFthickness)" :height="height - (OFthickness)" :x="OFthickness/2" :y="OFthickness/2" fill="#0195af" stroke="#000000" style="fill-opacity: 0.6; stroke-width: 1;"></rect>
             </g>
             <g v-if="otwieranie.indexOf('U')>=0">   
                 <line :x1="sashThickness" :y1="height-sashThickness" :x2="width/ 2" :y2="sashThickness" stroke="#0033">  </line>
@@ -48,6 +48,11 @@ export default {
     props:[
         'sashThickness','width','height','otwieranie','kierunek'
     ],
+    data(){
+        return {
+            OFthickness:5
+        }
+    },
     computed:{
         klamkaBocznaBool(){
             if(['FIX','FIXS','U'].indexOf(this.otwieranie) >= 0){

@@ -7,6 +7,22 @@
     <input v-model="width" type="number" step="50" min="300">
     <!-- <label for="">Grubość słupka</label> -->
     <!-- <input v-model="transomThickness" type="number" step="1"> -->
+    <p></p>
+     <select name="" id="" v-model="otwieranie1">
+        <option value="RU">RU</option>
+        <option value="R">R</option>
+        <option value="U">U</option>
+        <option value="FIXS">FIX w skrzydle</option>
+        <option value="FIX">FIX w ramie</option>
+    </select>
+
+       <select name="" id="" v-model="otwieranie2">
+        <option value="RU">RU</option>
+        <option value="R">R</option>
+        <option value="U">U</option>
+        <option value="FIXS">FIX w skrzydle</option>
+        <option value="FIX">FIX w ramie</option>
+    </select>
 
     <p></p>
     <button @click="unproportionalSashes = !unproportionalSashes" style="margin:5px"> nieproporcjonalne skrzydła</button>
@@ -34,18 +50,8 @@
 
     <g transform="translate(0,55)" id="okno">
         <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
-        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="'RU'"></sash>
-        <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'" v-if="!unproportionalSashes"></sash>
-
-         <g id="klamka1">
-            <rect :x="(sash1.width) - 16" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
-            <rect :x="(sash1.width) - 12.4" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2" style="fill-opacity: 1;"></rect>
-        </g>
-        <g id="klamka2" v-if="!unproportionalSashes">>
-            <rect :x="sash1.width + 25" :y="height / 2" width="18.82" height="18.82" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
-            <rect :x="sash1.width + 28.6" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2"  style="fill-opacity: 1;"></rect>
-        </g>
-       
+        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="otwieranie1" :kierunek="'L'"></sash>
+        <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="otwieranie2" :kierunek="'R'" v-if="!unproportionalSashes"></sash>       
     </g>
 
     <g id="wymiarprawy">
@@ -101,6 +107,8 @@ export default {
    
     data() {
         return {
+            otwieranie1:'RU',
+            otwieranie2:'R',
             y: 50,
             height: 300,
             width: 600,
