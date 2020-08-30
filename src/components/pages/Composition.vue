@@ -4,7 +4,8 @@
     <template v-for="conf of config">
 
         <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(conf.label, 'conf')}"  :key="conf.label">
-    <!--         <img src="..." class="card-img-top" alt="..."> -->
+            <img v-if="conf.label.includes('1')" src="../../assets/window.png" class="card-img-top" alt="...">
+            <img v-if="conf.label.includes('2')" src="../../assets/1r2ru.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{conf.label}}</h5>
                 <button class="btn btn-primary" @click="changePanel(3, 'choice', 'conf', conf.label)">Wybierz</button>
@@ -23,8 +24,8 @@ export default {
     data(){
         return {
             config:[
-                {label: '1 Skrzydło'},
-                {label: '2 Skrzydła'}
+                {label: '1 Skrzydło', img:'window.png'},
+                {label: '2 Skrzydła', img:'windows.png'}
             ]
         }
     }
