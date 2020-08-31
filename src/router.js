@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import app from './App'
-import test from './components/test'
+import creator from './components/pages/Creator'
+import configure from './components/pages/Configure'
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -10,12 +10,12 @@ export default new VueRouter({
     base:'',
     routes:[
         {
-            path:'/',
-            component: app
+            path: '/',
+            component: configure
         },
         {
-            path:'/test',
-            component: test
+            path: '/rysuj',
+            component: creator
         }
     ]
 })
