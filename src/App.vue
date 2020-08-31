@@ -14,15 +14,13 @@
 <script>
 import mainhead from './components/layout/Mainhead'
 import mainfoot from './components/layout/Mainfoot'
-import HelloWorld from './components/HelloWorld.vue'
-import Window from './components/Window.vue'
-import Sash from './components/Sash.vue'
+
 
 
 
 export default {
   components: {
-    Window,Sash, mainhead, mainfoot
+    mainhead, mainfoot
   }
   
 }

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <window></window>
+    <scheme></scheme>
     <p><b>To do:</b></p>
     <ul>
       <li>Picker z systemami okien</li>
@@ -17,9 +17,9 @@
     
 </template>
 <script>
-import Window from '../Window'
+import scheme from '../elements/Scheme'
 export default {
-    components:{window:Window},
+    components:{scheme:scheme},
     data(){
         return {
 

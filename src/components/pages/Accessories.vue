@@ -3,11 +3,11 @@
 <div class="container-fluid">
     <template v-for="add  of adds">
 
-        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(add.label, 'add')}"  :key="add.label">
+        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(add.value, 'add')}"  :key="add.label">
     <!--         <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
                 <h5 class="card-title">{{add.label}}</h5>
-                <button class="btn btn-primary" @click="changePanel(7, 'choice', 'add', add.label)">Wybierz</button>
+                <button class="btn btn-primary" @click="changePanel(7, 'choice', 'add', add.label, add.value)">Wybierz</button>
             </div>
         </div>
     </template>
@@ -23,9 +23,9 @@ export default {
     data(){
         return {
             adds:[
-                {label: 'szprosy'},
-                {label: 'poszerzenia'},
-                {label: 'okucie'},
+                {label: 'szprosy', value:'szpr'},
+                {label: 'poszerzenia', value:'posz'},
+                {label: 'okucie', value:'ok'},
             ]
         }
     },

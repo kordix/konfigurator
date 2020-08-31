@@ -3,11 +3,11 @@
 <div class="container-fluid">
     <template v-for="color of colors">
 
-        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(color.label, 'color')}"  :key="color.label">
+        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}"  :key="color.label">
     <!--         <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
                 <h5 class="card-title">{{color.label}}</h5>
-                <button class="btn btn-primary" @click="changePanel(6, 'choice', 'color', color.label)">Wybierz</button>
+                <button class="btn btn-primary" @click="changePanel(6, 'choice', 'color', color.label, color.value)">Wybierz</button>
             </div>
         </div>
     </template>
@@ -23,9 +23,9 @@ export default {
     data(){
         return {
             colors:[
-                {label: 'biały'},
-                {label: 'sosna'},
-                {label: 'butelkowy'},
+                {label: 'biały', value:'WHITE'},
+                {label: 'sosna', value:'PINE'},
+                {label: 'butelkowy', value:'GREEN'},
             ]
         }
     },

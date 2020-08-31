@@ -7,12 +7,12 @@
         </div>
     </div>
     <div class="row" style="height:100%; background:white">
-        <div class="col-7">
+        <div class="col-8">
             <transition :name="$root.transition" mode="out-in">
                 <component v-bind:is="view"></component>
             </transition>
         </div>
-        <div class="col-5">
+        <div class="col-4">
             <sidesummary></sidesummary>
         </div>
     </div>
