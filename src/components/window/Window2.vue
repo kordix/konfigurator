@@ -7,6 +7,8 @@
     <input v-model="width" type="number" step="50" min="300"> -->
     <!-- <label for="">Grubość słupka</label> -->
     <!-- <input v-model="transomThickness" type="number" step="1"> -->
+    <div v-if="$root.activepanel !=7">
+
     <p></p>
      <select name="" id="" v-model="otwieranie1">
         <option value="RU">RU</option>
@@ -32,6 +34,7 @@
            <label for="">Szerokość drugiego skrzydła</label>
         <input type="number" v-model="sash2WidthManual" step="50" >
 
+    </div>
     </div>
 </div>
 
@@ -118,7 +121,7 @@ export default {
             sashThickness: 30,
             unproportionalSashes:false,
             sash1WidthManual:0,
-            sash2WidthManual:0
+            sash2WidthManual:0,
         }
     },
     methods:{

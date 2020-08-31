@@ -26,6 +26,10 @@ new Vue({
       basicPrice(){
           let widthRound = Math.floor(this.form.size.value.w/100) * 100
           let heightRound = Math.floor(this.form.size.value.h/100) * 100
+          console.log(widthRound, heightRound);
+          let match = this.macierz.find((el)=>el.height==heightRound)
+          console.log(match);
+          console.log(match[widthRound]);
           return this.macierz.find((el)=>el.height==heightRound)[widthRound]
       },
   },

@@ -2,7 +2,7 @@
     <div class="card  my-3" style="width: 100%; display:inline-flex; background:#2B6F6F; color:white">
     <!--   <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Podsumowanie</h5>
+            <h1 class="card-title">Podsumowanie</h1>
             <div v-for="el in form" :key="el.label">
                 <h2 class="d-inline-block">{{el.label}} : </h2>
                 <h3 class="d-inline-block" v-if="el.label == 'Wymiary'">{{el.value.w}} x {{el.value.h}}</h3>
@@ -42,5 +42,17 @@ export default {
 }
 </script>
 <style scoped>
+h1{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+h2{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+h3{
+    font-size: 1em;
+    padding-left: 10px;
+}
 
 </style>
