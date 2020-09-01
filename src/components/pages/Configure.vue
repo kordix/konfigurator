@@ -7,12 +7,12 @@
         </div>
     </div>
     <div class="row" style="height:100%; background:white">
-        <div class="col-8">
+        <div :class="{'col-8': summary, 'col-12': !summary}">
             <transition :name="$root.transition" mode="out-in">
                 <component v-bind:is="view"></component>
             </transition>
         </div>
-        <div class="col-4">
+        <div :class="{'col-4': summary}" v-if="summary">
             <sidesummary></sidesummary>
         </div>
     </div>
@@ -36,6 +36,13 @@ export default {
         }
     },
     computed:{
+        summary(){
+            if(this.$root.activepanel == 3){
+                return false
+            } else {
+                return true
+            }
+        },
         view(){
             switch (this.$root.activepanel) {
             case 1:

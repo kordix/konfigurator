@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<svg :width="width+200" :height="parseInt(height)+100">
+<svg :width="parseInt(width)+200" :height="parseInt(height)+100">
     <g id="wymiargorny">
         <GrotL :x="0" :y="20"></GrotL>
         <GrotP :x="width" :y="20"></GrotP>

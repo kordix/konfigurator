@@ -3,11 +3,14 @@
 <div class="container-fluid">
     <template v-for="glazing of glazings">
 
-        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(glazing.value, 'glazing')}"  :key="glazing.label">
-    <!--         <img src="..." class="card-img-top" alt="..."> -->
+        <div @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)" class="card mx-3 my-3" style="width: 28%; display:inline-flex" :style="{background:bgcard(glazing.value, 'glazing')}"  :key="glazing.label">
+<!--             <img  :src="getPic('szyby', glazing.img)" class="card-img-top" alt="..."> -->
+            <img  src='../../assets/images/szyby/2szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '1K'">
+            <img  src='../../assets/images/szyby/3szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '2K'">
+            <img  src='../../assets/images/szyby/4szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '3K'">
             <div class="card-body">
                 <h5 class="card-title">{{glazing.label}}</h5>
-                <button class="btn btn-primary" @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)">Wybierz</button>
+<!--                 <button class="btn btn-primary" @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)">Wybierz</button> -->
             </div>
         </div>
     </template>
@@ -23,8 +26,9 @@ export default {
     data(){
         return {
             glazings:[
-                {label: 'Jednokomorowe', value:'1K'},
-                {label: 'Dwukomorowe', value:'2K'},
+                {label: 'Pakiet 2-szybowy', value:'1K', img: '2szyby.png'},
+                {label: 'Pakiet 3-szybowy', value:'2K', img: '3szyby.png'},
+                {label: 'Pakiet 4-szybowy', value:'3K', img: '4szyby.png'},
             ]
         }
     },
