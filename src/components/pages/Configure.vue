@@ -60,10 +60,10 @@ export default {
             case 5:
                 return 'color';
                 break;
-            case 6:
+/*             case 6:
                 return 'accessories';
-                break;
-            case 7:
+                break; */
+            case 6:
                 return 'total';
                 break;
             default:

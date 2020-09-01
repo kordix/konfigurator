@@ -6,7 +6,7 @@
         <div class="text-center my-2 font-weight-bold step-title" style="font-size:0.9rem">{{step.label}}</div>
 
         </div>
-        <div class="line" :key="step.label" v-if="step.num != 7"></div>
+        <div class="line" :key="step.label" v-if="step.num != (steps.length)"></div>
 
     </template>
 
@@ -27,8 +27,8 @@ export default {
                 {num: 3, label: 'Wymiary'},
                 {num: 4, label: 'Szklenie'},
                 {num: 5, label: 'Kolor'},
-                {num: 6, label: 'Dodatki'},
-                {num: 7, label: 'Razem'}
+/*                 {num: 6, label: 'Dodatki'}, */
+                {num: 6, label: 'Razem'}
             ]
         }
     },

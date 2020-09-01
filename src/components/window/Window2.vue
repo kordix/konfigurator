@@ -7,7 +7,7 @@
     <input v-model="width" type="number" step="50" min="300"> -->
     <!-- <label for="">Grubość słupka</label> -->
     <!-- <input v-model="transomThickness" type="number" step="1"> -->
-    <div v-if="$root.activepanel !=7">
+    <div v-if="$root.activepanel !=6">
 
     <p></p>
      <select name="" id="" v-model="otwieranie1">
