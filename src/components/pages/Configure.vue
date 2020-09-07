@@ -1,33 +1,32 @@
 <template>
-<div class="container getheight pt-3">
-
-    <div class="row">
-        <div class="col">
-            <stepper></stepper>
+    <div class="container getheight pt-3">
+        <div class="row">
+            <div class="col">
+                <stepper></stepper>
+            </div>
+        </div>
+        <div class="row" style="height:100%; background:white">
+            <div :class="{'col-8': summary, 'col-12': !summary}">
+                <transition :name="$root.transition" mode="out-in">
+                    <component v-bind:is="view"></component>
+                </transition>
+            </div>
+            <div :class="{'col-4': summary}" v-if="summary">
+                <sidesummary></sidesummary>
+            </div>
         </div>
     </div>
-    <div class="row" style="height:100%; background:white">
-        <div :class="{'col-8': summary, 'col-12': !summary}">
-            <transition :name="$root.transition" mode="out-in">
-                <component v-bind:is="view"></component>
-            </transition>
-        </div>
-        <div :class="{'col-4': summary}" v-if="summary">
-            <sidesummary></sidesummary>
-        </div>
-    </div>
-</div>
 </template>
 <script>
 import stepper from '../elements/Stepper'
-import systems from '../pages/Systems'
-import composition from '../pages/Composition'
-import glazing from '../pages/Glazing'
-import color from '../pages/Color'
-import accessories from '../pages/Accessories'
-import total from '../pages/Summary'
-import sidesummary from '../pages/Sidesummary'
-import size from '../pages/Size'
+import systems from '../panels/Systems'
+import composition from '../panels/Composition'
+import glazing from '../panels/Glazing'
+import color from '../panels/Color'
+import accessories from '../panels/Accessories'
+import total from '../panels/Summary'
+import sidesummary from '../panels/Sidesummary'
+import size from '../panels/Size'
 export default {
     components:{stepper, systems, composition, glazing, color, accessories, total, sidesummary, size},
     data(){
@@ -70,6 +69,11 @@ export default {
                 return 'systems'
             }
         }
+    },
+    mounted(){
+        $(document).ready(function(){
+        $("#modalCenter").modal('show');
+    });
     }
 }
 </script>

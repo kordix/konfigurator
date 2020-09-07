@@ -5,6 +5,8 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import macierz from './macierz'
 import store from './store/store'
+import JQuery from 'jquery'
+window.$ = JQuery
 
 
 Vue.config.productionTip = false
