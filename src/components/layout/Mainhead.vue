@@ -14,6 +14,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/rysuj">Rysuj Okno</a>
         </li>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCenter">
+  Launch demo modal
+</button>
   <!--       <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
