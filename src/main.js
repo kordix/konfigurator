@@ -4,6 +4,7 @@ import router from './router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import macierz from './macierz'
+import store from './store/store'
 
 
 Vue.config.productionTip = false
@@ -33,6 +34,7 @@ new Vue({
           return this.macierz.find((el)=>el.height==heightRound)[widthRound]
       },
   },
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

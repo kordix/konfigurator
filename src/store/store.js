@@ -10,14 +10,18 @@ export default new Vuex.Store({
     state:{
         safety:0,
         thermoinsulation: 0,
-        acustics: 0
+        acustics: 0,
+        postcode:null
     },
     getters:{},
     mutations:{
         assignFeatures(state, {safety, thermoinsulation, acustics}){
             state.safety = safety
-            state.safety = safety
-            state.safety = safety
+            state.thermoinsulation = thermoinsulation
+            state.acustics = acustics
+        },
+        assignPostcode(state, postcode){
+            state.postcode  = postcode
         }
     },
     actions:{}
