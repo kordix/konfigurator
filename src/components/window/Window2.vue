@@ -9,7 +9,7 @@
     <!-- <input v-model="transomThickness" type="number" step="1"> -->
     <div v-if="$root.activepanel !=6">
 
-    <p></p>
+<!--     <p></p>
      <select name="" id="" v-model="otwieranie1">
         <option value="RU">RU</option>
         <option value="R">R</option>
@@ -26,7 +26,7 @@
         <option value="FIX">FIX w ramie</option>
     </select>
 
-    <p></p>
+    <p></p> -->
     <!-- <button @click="unproportionalSashes = !unproportionalSashes" style="margin:5px"> nieproporcjonalne skrzydła</button> -->
     <div v-if="unproportionalSashes" style="margin-top:20px;margin-bottom:20px">
         <label for="">Szerokość pierwszego skrzydła</label>
@@ -53,8 +53,8 @@
 
     <g transform="translate(0,55)" id="okno">
         <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
-        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="otwieranie1" :kierunek="'L'"></sash>
-        <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="otwieranie2" :kierunek="'R'" v-if="!unproportionalSashes"></sash>       
+        <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="$root.form.dir1.value" :kierunek="'L'"></sash>
+        <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="$root.form.dir2.value" :kierunek="'R'" v-if="!unproportionalSashes"></sash>       
     </g>
 
     <g id="wymiarprawy">
@@ -122,6 +122,8 @@ export default {
             unproportionalSashes:false,
             sash1WidthManual:0,
             sash2WidthManual:0,
+/*             width: 500,
+            height: 400 */
         }
     },
     methods:{
@@ -162,7 +164,11 @@ export default {
         height(){
             return parseInt(this.$root.form.size.value.h)
         }
-    }
+    },
+/*     created(){
+        this.width = parseInt(this.$root.form.size.value.w)
+        this.height = parseInt(this.$root.form.size.value.h)
+    } */
 
 }
 

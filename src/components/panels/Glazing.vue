@@ -1,19 +1,27 @@
 <template>
 
 <div class="container-fluid">
-    <template v-for="glazing of glazings">
+    <div class="row">
+        <div class="col-4" v-for="glazing of glazings" :key="glazing.label">
 
-        <div @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)" class="card mx-3 my-3" style="width: 28%; display:inline-flex" :style="{background:bgcard(glazing.value, 'glazing')}"  :key="glazing.label">
-<!--             <img  :src="getPic('szyby', glazing.img)" class="card-img-top" alt="..."> -->
-            <img  src='../../assets/images/szyby/2szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '1K'">
-            <img  src='../../assets/images/szyby/3szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '2K'">
-            <img  src='../../assets/images/szyby/4szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '3K'">
-            <div class="card-body">
-                <h5 class="card-title">{{glazing.label}}</h5>
-<!--                 <button class="btn btn-primary" @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)">Wybierz</button> -->
+            <div @click="saveCard( 'glazing', glazing.label, glazing.value)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(glazing.value, 'glazing')}">
+    <!--             <img  :src="getPic('szyby', glazing.img)" class="card-img-top" alt="..."> -->
+                <img  src='../../assets/images/szyby/2szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '1K'">
+                <img  src='../../assets/images/szyby/3szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '2K'">
+                <img  src='../../assets/images/szyby/4szyby.png' class="card-img-top" alt="..." v-if="glazing.value == '3K'">
+                <div class="card-body">
+                    <h5 class="card-title">{{glazing.label}}</h5>
+    <!--                 <button class="btn btn-primary" @click="changePanel(5, 'choice', 'glazing', glazing.label, glazing.value)">Wybierz</button> -->
+                </div>
             </div>
         </div>
-    </template>
+
+    </div>
+    <div class="row d-flex justify-content-end">
+        <div class="col-3">
+            <button style="width:100%" class="btn btn-primary" @click="nextPanel(5)">Dalej</button>
+        </div>
+    </div>
 
 </div>
 

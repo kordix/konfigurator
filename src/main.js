@@ -8,22 +8,32 @@ import store from './store/store'
 import JQuery from 'jquery'
 window.$ = JQuery
 
+import { BootstrapVue, BIcon, BIconInfoSquareFill} from 'bootstrap-vue'
+Vue.use(BootstrapVue)
+Vue.component('BIcon', BIcon);
+Vue.component('BIconInfoSquareFill', BIconInfoSquareFill)
+
 
 Vue.config.productionTip = false
 
 new Vue({
   data:{
+    compositionPanel: 'kwatery',
     activepanel:1,
     transition: 'component-slide-fade',
     macierz: macierz,
     form:{
       system:{value:'', name:'', label:'System'},
-      conf:{value:'', name:'', label:'Układ'},
-      size:{value:{w:200, h:200},  label:'Wymiary'},
+      conf:{value:'', name:'', label:'Kwatery'},
+      dir1:{value:'', name:'', label:'Kwatera 1'},
+      dir2:{value:'', name:'', label:'Kwatera 2'},
+      dir3:{value:'', name:'', label:'Kwatera 3'},
+      size:{value:{w:500, h:400},  label:'Wymiary'},
       glazing:{value:'', name:'', label:'Szklenie'},
       color:{value:'', name:'', label:'Kolor'},
       add:{value:'', name:'', label:'Dodatki'},
-    }
+    },
+    direction:{otwieranie1:'RU', otwieranie2: 'R', otwieranie3: 'FIX'}
   },
   computed:{
       basicPrice(){

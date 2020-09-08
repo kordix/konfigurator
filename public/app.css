@@ -82,3 +82,10 @@ height: 73vh;
   .btn-primary{
     background: #2B6F6F!important;
   }
+  h3.popover-header{
+    background-color: rgba(11, 28, 67, 0.692)!important;
+    color: white!important;
+  }
+  div.popover-body{
+    background-color: #f7f7f7!important;
+  }

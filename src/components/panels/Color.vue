@@ -1,17 +1,24 @@
 <template>
 
 <div class="container-fluid">
-    <template v-for="color of colors">
+    <div class="row">
+        <div class="col-4" v-for="color of colors" :key="color.label">
 
-        <div @click="changePanel(6, 'choice', 'color', color.label, color.value)" class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}"  :key="color.label">
-                <img src="../../assets/images/kolory/bialy.jpg" class="card-img-top" alt="..." v-if="color.value == 'WHITE'">
-                <img src="../../assets/images/kolory/zielony.jpg" class="card-img-top" alt="..." v-if="color.value == 'GREEN'">
-                <img src="../../assets/images/kolory/jasnydab.jpg" class="card-img-top" alt="..." v-if="color.value == 'OAK'">
-            <div class="card-body">
-                <h5 class="card-title">{{color.label}}</h5>
+            <div @click="saveCard('color', color.label, color.value)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}">
+                    <img src="../../assets/images/kolory/bialy.jpg" class="card-img-top" alt="..." v-if="color.value == 'WHITE'">
+                    <img src="../../assets/images/kolory/zielony.jpg" class="card-img-top" alt="..." v-if="color.value == 'GREEN'">
+                    <img src="../../assets/images/kolory/jasnydab.jpg" class="card-img-top" alt="..." v-if="color.value == 'OAK'">
+                <div class="card-body">
+                    <h5 class="card-title">{{color.label}}</h5>
+                </div>
             </div>
         </div>
-    </template>
+    </div>
+    <div class="row d-flex justify-content-end">
+        <div class="col-3">
+            <button style="width:100%" class="btn btn-primary" @click="nextPanel(6)">Dalej</button>
+        </div>
+    </div>
 
 </div>
 

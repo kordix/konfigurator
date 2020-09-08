@@ -4,15 +4,23 @@
             <template class="col-4" v-for="system of systems" v-if="systems">
                 <div class="col-4" :key="system.label">
 
-                    <div class="card mx-3 my-3 h-100" style=" display:inline-flex" :style="{background:bgcard(system.value, 'system')}" @click="changePanel(2, 'choice', 'system', system.label, system.value)">
+                    <div class="card mx-3 my-3 h-80" style=" display:inline-flex" :style="{background:bgcard(system.value, 'system')}" @click="saveCard('system', system.label, system.value)">
                         <img  :src="getPic('system', system.img)" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-subtitle">{{system.label}}</h5>
-            <!--                 <button class="btn btn-primary" @click="changePanel(2, 'choice', 'system', system.label)">Wybierz</button> -->
+                        </div>
+                        <div class="d-flex justify-content-end" style="width:100%; position:relative" data-toggle="popover" data-placement="right" :title="system.label" :data-content="system.popover" data-trigger="hover">
+
+                                <b-icon-info-square-fill  class="mr-2 mb-3"></b-icon-info-square-fill>
                         </div>
                     </div>
                 </div>
             </template>
+        </div>
+        <div class="row d-flex justify-content-end">
+            <div class="col-3">
+                <button style="width:100%" class="btn btn-primary" @click="nextPanel(2)">Dalej</button>
+            </div>
         </div>
     </div>
 </template>
@@ -33,9 +41,15 @@ export default {
     },
     methods:{
 
+    },
+    mounted(){
+        $(function () {
+        $('[data-toggle="popover"]').popover()
+        })
     }
 }
 </script>
 <style scoped>
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-        <label for="">Wysokość</label>
+        <!-- <label for="">Wysokość</label> -->
         <!-- <input v-model="height" type="number" step="50" min="300"> -->
         <!-- <label for="">Szerokość</label> -->
         <!-- <input v-model="width" type="number" step="50" min="300"> -->
