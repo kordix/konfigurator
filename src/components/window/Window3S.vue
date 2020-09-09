@@ -31,7 +31,7 @@
     <!-- <polyline points="0,5,10,0,10,10"></polyline> -->
 
     <g transform="translate(0,55)" id="okno">
-        <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
+        <rect :width="width" :height="height" :fill="$root.profileColor" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
         <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="'RU'"></sash>
         <sash :transform="'translate('+sash2.x+','+sash2.y+')'" :width="sash2.width" :height="sash2.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'"></sash>
         <sash :transform="'translate('+sash3.x+','+sash3.y+')'" :width="sash3.width" :height="sash3.height" :sashDiff="sashDiff" :sashThickness="sashThickness" :otwieranie="'R'"></sash>
@@ -39,11 +39,11 @@
 
         <g id="klamka1">
             <rect :x="(sash1.width) - 16" :y="height / 2" width="18.823529411764802" height="18.823529411764802" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
-            <rect :x="(sash1.width) - 12.4" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2" style="fill-opacity: 1;"></rect>
+            <rect :x="(sash1.width) - 12.4" :y="height / 2 + 4" width="11.3" height="56.5" :fill="$root.handleColor" stroke="#999999" stoke-width="0.2" style="fill-opacity: 1;"></rect>
         </g>
         <g id="klamka2">
             <rect :x="sash1.width + 25" :y="height / 2" width="18.823529411764802" height="18.823529411764802" stroke="#999999" stoke-width="0.2" style="fill-opacity: 0;"></rect>
-            <rect :x="sash1.width + 28.6" :y="height / 2 + 4" width="11.3" height="56.5" fill="#ffffff" stroke="#999999" stoke-width="0.2"  style="fill-opacity: 1;"></rect>
+            <rect :x="sash1.width + 28.6" :y="height / 2 + 4" width="11.3" height="56.5" :fill="$root.handleColor" stroke="#999999" stoke-width="0.2"  style="fill-opacity: 1;"></rect>
         </g>
        
     </g>

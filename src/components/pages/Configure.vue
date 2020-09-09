@@ -23,12 +23,13 @@ import systems from '../panels/Systems'
 import composition from '../panels/Composition'
 import glazing from '../panels/Glazing'
 import color from '../panels/Color'
+import grilles from '../panels/Grilles'
 import accessories from '../panels/Accessories'
 import total from '../panels/Summary'
 import sidesummary from '../panels/Sidesummary'
 import size from '../panels/Size'
 export default {
-    components:{stepper, systems, composition, glazing, color, accessories, total, sidesummary, size},
+    components:{stepper, systems, composition, glazing, color, accessories, total, sidesummary, size, grilles},
     data(){
         return {
 
@@ -59,10 +60,13 @@ export default {
             case 5:
                 return 'color';
                 break;
-/*             case 6:
-                return 'accessories';
-                break; */
             case 6:
+                return 'grilles';
+                break;
+            case 7:
+                return 'accessories';
+                break;
+            case 8:
                 return 'total';
                 break;
             default:

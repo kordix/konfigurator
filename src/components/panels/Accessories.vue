@@ -1,16 +1,24 @@
 <template>
 
 <div class="container-fluid">
-    <template v-for="add  of adds">
+    <div class="row">
+        <div class="col-4" v-for="add of adds" :key="add.label">
 
-        <div class="card mx-3 my-3" style="width: 27%; display:inline-flex" :style="{background:bgcard(add.value, 'add')}"  :key="add.label">
+<!--             <div @click="saveCard('color', color.label, color.value); assignColor(color.rgb)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}"> -->
+
+        <div class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(add.value, 'add')}">
     <!--         <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
                 <h5 class="card-title">{{add.label}}</h5>
-                <button class="btn btn-primary" @click="changePanel(7, 'choice', 'add', add.label, add.value)">Wybierz</button>
             </div>
         </div>
-    </template>
+    </div>
+</div>
+    <div class="row d-flex justify-content-end">
+        <div class="col-3">
+            <button style="width:100%" class="btn btn-primary" @click="nextPanel(8)">Dalej</button>
+        </div>
+    </div>
 
 </div>
 
@@ -23,9 +31,9 @@ export default {
     data(){
         return {
             adds:[
-                {label: 'szprosy', value:'szpr'},
                 {label: 'poszerzenia', value:'posz'},
                 {label: 'okucie', value:'ok'},
+                {label: 'klamki', value:'handle'},
             ]
         }
     },

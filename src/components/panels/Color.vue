@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-4" v-for="color of colors" :key="color.label">
 
-            <div @click="saveCard('color', color.label, color.value)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}">
+            <div @click="saveCard('color', color.label, color.value); assignColor(color.rgb)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(color.value, 'color')}">
                     <img src="../../assets/images/kolory/bialy.jpg" class="card-img-top" alt="..." v-if="color.value == 'WHITE'">
                     <img src="../../assets/images/kolory/zielony.jpg" class="card-img-top" alt="..." v-if="color.value == 'GREEN'">
                     <img src="../../assets/images/kolory/jasnydab.jpg" class="card-img-top" alt="..." v-if="color.value == 'OAK'">
@@ -31,14 +31,16 @@ export default {
     data(){
         return {
             colors:[
-                {label: 'Biały', value:'WHITE'},
-                {label: 'Zielony', value:'GREEN'},
-                {label: 'Jasny Dąb', value:'OAK'},
+                {label: 'Biały', value:'WHITE', rgb: 'rgb(255,255,255)'},
+                {label: 'Zielony', value:'GREEN', rgb: 'rgb(27,91,70)'},
+                {label: 'Jasny Dąb', value:'OAK', rgb: 'rgb(191,140,0)'},
             ]
         }
     },
     methods:{
-
+        assignColor(rgb){
+            this.$root.profileColor = rgb
+        }
     }
 }
 </script>

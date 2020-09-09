@@ -47,11 +47,11 @@ h1{
     font-weight: bold;
 }
 h2{
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: bold;
 }
 h3{
-    font-size: 1em;
+    font-size: 0.8em;
     padding-left: 10px;
 }
 

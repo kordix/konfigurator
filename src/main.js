@@ -18,22 +18,30 @@ Vue.config.productionTip = false
 
 new Vue({
   data:{
+    grillesPanel: 'rodzaj',
     compositionPanel: 'kwatery',
     activepanel:1,
     transition: 'component-slide-fade',
     macierz: macierz,
     form:{
       system:{value:'', name:'', label:'System'},
-      conf:{value:'', name:'', label:'Kwatery'},
+      conf:{value:'', name:'', label:'Rodzaj okna'},
       dir1:{value:'', name:'', label:'Kwatera 1'},
       dir2:{value:'', name:'', label:'Kwatera 2'},
       dir3:{value:'', name:'', label:'Kwatera 3'},
+      grilleskind:{value:'', name:'', label:'Rodzaj szprosów'},
+      grillesconf1:{value:'', name:'', label:'Kwatera 1'},
+      grillesconf2:{value:'', name:'', label:'Kwatera 2'},
+      grillesconf3:{value:'', name:'', label:'Kwatera 3'},
       size:{value:{w:500, h:400},  label:'Wymiary'},
       glazing:{value:'', name:'', label:'Szklenie'},
       color:{value:'', name:'', label:'Kolor'},
       add:{value:'', name:'', label:'Dodatki'},
     },
-    direction:{otwieranie1:'RU', otwieranie2: 'R', otwieranie3: 'FIX'}
+    direction:{otwieranie1:'RU', otwieranie2: 'R', otwieranie3: 'FIX'},
+    profileColor:'#ffffff',
+    glazingColor: '#0195af',
+    handleColor: '#ffffff'
   },
   computed:{
       basicPrice(){

@@ -44,7 +44,7 @@
         <!-- <polyline points="0,5,10,0,10,10"></polyline> -->
 
         <g transform="translate(0,55)" id="okno">
-            <rect :width="width" :height="height" fill="#ffffff" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
+            <rect :width="width" :height="height" :fill="$root.profileColor" stroke="#000000" style="fill-opacity: 1; stroke-width: 1;"></rect>
             <sash :transform="'translate('+sash1.x+','+sash1.y+')'" :width="sash1.width" :height="sash1.height" :sashThickness="sashThickness" :otwieranie="otwieranie" :kierunek="kierunek"></sash>
         </g>
 

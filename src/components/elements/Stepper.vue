@@ -21,8 +21,9 @@ export default {
                 {num: 3, label: 'Wymiary'},
                 {num: 4, label: 'Szklenie'},
                 {num: 5, label: 'Kolor'},
-/*                 {num: 6, label: 'Dodatki'}, */
-                {num: 6, label: 'Razem'}
+                {num: 6, label: 'Szprosy'},
+                {num: 7, label: 'Akcesoria'},
+                {num: 8, label: 'Razem'}
             ]
         }
     },
