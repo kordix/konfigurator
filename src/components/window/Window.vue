@@ -35,7 +35,7 @@
         <g id="wymiargorny">
             <GrotL :x="0" :y="20"></GrotL>
             <GrotP :x="width" :y="20"></GrotP>
-            <text :x="width/2-10" y="15">{{width}}</text>
+            <text :x="width/2-10" y="15">{{parseInt($root.form.size.value.w)}}</text>
             <line id="pozioma" x1="0" y1="25" :x2="width" y2="25" stroke="#000000" style="stroke-width: .3;"> </line>
             <line id="lewa" :x1="width" y1="20" :x2="width" y2="50" stroke="#000000" style="stroke-width: .3;"> </line>
             <line id="prawa" x1="0" y1="20" x2="0" y2="50" stroke="#000000" style="stroke-width: .3;"> </line>
@@ -50,11 +50,11 @@
 
         <g id="wymiarprawy">
             <GrotG :x="width + 30" :y="50"></GrotG>
-            <text :x="width/2-10" y="15">{{width}}</text>
+            <text :x="width/2-10" y="15">{{parseInt($root.form.size.value.w)}}</text>
             <line id="gorna" :x1="width + 5" y1="50" :x2="width + 50" y2="50" stroke="#000000" style="stroke-width: .3;"> </line>
             <line id="pionowa" :x1="width + 30" y1="50" :x2="width + 30" :y2="parseInt(height) + 55" stroke="#000000" style="stroke-width: .3;"> </line>
             <line id="dolna" :x1="parseInt(width) + 5" :y1="height + 55" :x2="width + 50" :y2="height + 55" stroke="#000000" style="stroke-width: .3;"> </line>
-            <text :x="width+32" :y="parseInt(height)/2+55">{{height}}</text>
+            <text :x="width+32" :y="parseInt(height)/2+55">{{parseInt($root.form.size.value.h)}}</text>
 
             <GrotD :x="width + 30" :y="parseInt(height) + 55"></GrotD>
 
@@ -150,10 +150,43 @@ export default {
     },
     computed: {
         width(){
-            return parseInt(this.$root.form.size.value.w)
+            //return parseInt(this.$root.form.size.value.w)
+            let h =parseInt(this.$root.form.size.value.h)
+            let w = parseInt(this.$root.form.size.value.w)
+            let height = 600 -200
+            let width = 800 -100
+            let ratio = h/w
+            let expwidth = 1/ratio * height
+            let perc = 0
+            if(expwidth>width){
+                let expheight = ratio * width
+                perc = Math.floor((expheight/h) * 100)
+            }
+            else{
+                perc = Math.floor((expwidth/w) * 100)
+            }
+            console.log((perc/100)*w);
+            return (perc/100)*w
+            
         },
         height(){
-            return parseInt(this.$root.form.size.value.h)
+            //return parseInt(this.$root.form.size.value.h)
+            let h =parseInt(this.$root.form.size.value.h)
+            let w = parseInt(this.$root.form.size.value.w)
+            let height = 600 -200
+            let width = 800 -100
+            let ratio = h/w
+            let expwidth = 1/ratio * height
+            let perc = 0
+            if(expwidth>width){
+                let expheight = ratio * width
+                perc = Math.floor((expheight/h) * 100)
+            }
+            else{
+                perc = Math.floor((expwidth/w) * 100)
+            }
+            console.log((perc/100)*h);
+            return (perc/100)*h
         }
     }
 
