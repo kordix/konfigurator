@@ -153,8 +153,8 @@ export default {
             //return parseInt(this.$root.form.size.value.w)
             let h =parseInt(this.$root.form.size.value.h)
             let w = parseInt(this.$root.form.size.value.w)
-            let height = 600 -200
-            let width = 700 -100
+            let height = 700 -200
+            let width = 500 -100
             let ratio = h/w
             let expwidth = 1/ratio * height
             let perc = 0
@@ -173,8 +173,8 @@ export default {
             //return parseInt(this.$root.form.size.value.h)
             let h =parseInt(this.$root.form.size.value.h)
             let w = parseInt(this.$root.form.size.value.w)
-            let height = 600 -200
-            let width = 800 -100
+            let height = 700 -200
+            let width = 500 -100
             let ratio = h/w
             let expwidth = 1/ratio * height
             let perc = 0

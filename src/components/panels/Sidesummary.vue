@@ -1,8 +1,13 @@
 <template>
-    <div class="card  mb-3" style="width: 100%; display:inline-flex; background:#2B6F6F; color:white">
+<div class="container-fluid" style="padding:0; margin-left:10px">
+    <div class="row">
+        <div class="row" style="width:100%; background-color: rgb(11, 28, 67); color: white; border-radius:0; padding:0; margin-left:5px; margin-bottom:10px" >
+            <h5  class="section-head"  style="margin:5px auto">Podsumowanie</h5>
+        </div>
+    </div>
+    <div class="card  mb-3" style="width: 100%; height:100%; display:inline-flex; border:none; background:white; color:rgb(11, 28, 67)">
     <!--   <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body d-flex flex-column">
-            <h1 class="card-title">Podsumowanie</h1>
             <div v-for="el in form" :key="el.label">
                 <h2 class="d-inline-block">{{el.label}} : </h2>
                 <h3 class="d-inline-block" v-if="el.label == 'Wymiary'">{{el.value.w}} x {{el.value.h}}</h3>
@@ -14,6 +19,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 <script>
 import common from '../../mixins/common'

@@ -1,9 +1,9 @@
 <template>
     <div class="d-flex flex-row justify-content-between">
         <template v-for="step of steps">
-            <div :key="step.num">
-                <button @click="nextPanel(step.num)" class="btn btn-circle btn-xl" :class="{'btn-outline-primary':$root.activepanel==step.num}" :style="{background:bgcolor(step.num)}" type="submit">{{step.num}}</button>
-                <div class="text-center my-2 font-weight-bold step-title" style="font-size:0.9rem">{{step.label}}</div>
+            <div :key="step.num" class="d-flex flex-column justify-center">
+                <button @click="nextPanel(step.num)" class="btn btn-circle btn-md" :class="{'btn-outline-primary':$root.activepanel==step.num}" :style="{background:bgcolor(step.num)}" type="submit">{{step.num}}</button>
+                <div class="text-center my-2 font-weight-bold step-title">{{step.label}}</div>
             </div>
             <div class="line" :key="step.label" v-if="step.num != (steps.length)"></div>
         </template>

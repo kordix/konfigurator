@@ -2,6 +2,11 @@
 
 <div class="container-fluid">
     <div class="row">
+            <div class="row" style="width:100%; background-color: rgb(11, 28, 67); color: white; border-radius:0; padding:0; margin-left:0" >
+                <h5  class="section-head" style="margin:5px auto">Wymiary</h5>
+            </div>
+        </div>
+    <div class="row">
         <div class="col-4">
             <div class="card mx-3 my-3">
         <!--         <img src="..." class="card-img-top" alt="..."> -->
@@ -38,5 +43,8 @@ export default {
 }
 </script>
 <style scoped>
+input{
+    width: 125px;
+}
 
 </style>

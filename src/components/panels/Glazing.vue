@@ -2,6 +2,11 @@
 
 <div class="container-fluid">
     <div class="row">
+            <div class="row" style="width:100%; background-color: rgb(11, 28, 67); color: white; border-radius:0; padding:0; margin-left:0" >
+                <h5 class="section-head" style="margin:5px auto">Szklenie</h5>
+            </div>
+        </div>
+    <div class="row">
         <div class="col-4" v-for="glazing of glazings" :key="glazing.label">
 
             <div @click="saveCard( 'glazing', glazing.label, glazing.value)" class="card mx-3 my-3" style="width: 100%; display:inline-flex" :style="{background:bgcard(glazing.value, 'glazing')}">

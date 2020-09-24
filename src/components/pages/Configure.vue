@@ -1,17 +1,21 @@
 <template>
-    <div class="container getheight pt-3">
+    <div class="container-fluid getheight pt-3">
         <div class="row">
             <div class="col">
                 <stepper></stepper>
             </div>
         </div>
-        <div class="row" style="height:100%; background:white">
-            <div :class="{'col-8': summary, 'col-12': !summary}">
+        <div class="row" style="height:100%;">
+            <div class="col-2 pa-0" id="filters" style="padding:0">
+                <filters></filters>
+
+            </div>
+            <div class="col-7" id="main-content" style="background:white; padding:0 1px">
                 <transition :name="$root.transition" mode="out-in">
                     <component v-bind:is="view"></component>
                 </transition>
             </div>
-            <div :class="{'col-4': summary}" v-if="summary">
+            <div class="col-3" id="side-summary" style="padding:0">
                 <sidesummary></sidesummary>
             </div>
         </div>
@@ -28,8 +32,9 @@ import accessories from '../panels/Accessories'
 import total from '../panels/Summary'
 import sidesummary from '../panels/Sidesummary'
 import size from '../panels/Size'
+import filters from '../elements/Filters'
 export default {
-    components:{stepper, systems, composition, glazing, color, accessories, total, sidesummary, size, grilles},
+    components:{stepper, systems, composition, glazing, color, accessories, total, sidesummary, size, grilles, filters},
     data(){
         return {
 

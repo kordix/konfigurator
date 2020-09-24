@@ -1,7 +1,7 @@
 <template>
-  <div style="background:#f8f9fa!important">
+  <div>
       <mainhead></mainhead>
-    <div class="container" style="height:100%">
+    <div class="container-fluid" style="height:100%">
       <router-view></router-view>
       <startinfo></startinfo>
     </div>
