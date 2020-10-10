@@ -17,14 +17,14 @@
     </div>
 </div>
 
-<svg :width="parseInt(width)+200" :height="parseInt(height)+100">
+<svg :width="parseInt(width)+200" :height="parseInt(height)+100"  style="transform:scale(0.5,0.5);transform-origin: 0% 0%">
     <g id="wymiargorny">
-        <GrotL :x="0" :y="20"></GrotL>
-        <GrotP :x="width" :y="20"></GrotP>
-        <text :x="width/2-10" y="15">{{width}}</text>
-        <line id="pozioma" x1="0" y1="25" :x2="width" y2="25" stroke="#000000" style="stroke-width: .3;"> </line>  
-        <line id="lewa" :x1="width" y1="20" :x2="width" y2="50" stroke="#000000" style="stroke-width: .3;"> </line> 
-        <line id="prawa" x1="0" y1="20" x2="0" y2="50" stroke="#000000" style="stroke-width: .3;"> </line> 
+        <GrotL :x="0" :y="25"></GrotL>
+        <GrotP :x="width" :y="25"></GrotP>
+        <text :x="width/2-10" y="25" style="font-size:30px">{{width}}</text>
+        <line id="pozioma" x1="0" y1="30" :x2="width" y2="30" stroke="#000000" style="stroke-width: .3;"> </line>  
+        <line id="lewa" :x1="width" y1="25" :x2="width" y2="50" stroke="#000000" style="stroke-width: .3;"> </line> 
+        <line id="prawa" x1="0" y1="25" x2="0" y2="50" stroke="#000000" style="stroke-width: .3;"> </line> 
     </g>
 
 
@@ -50,11 +50,10 @@
 
     <g id="wymiarprawy">
         <GrotG :x="width + 30" :y="50"></GrotG>
-        <text :x="width/2-10" y="15">{{width}}</text>
         <line id="gorna" :x1="width + 5" y1="50" :x2="width + 50" y2="50" stroke="#000000" style="stroke-width: .3;"> </line>  
         <line id="pionowa" :x1="width + 30" y1="50" :x2="width + 30" :y2="parseInt(height) + 55" stroke="#000000" style="stroke-width: .3;"> </line> 
         <line id="dolna" :x1="parseInt(width) + 5" :y1="height + 55" :x2="width + 50" :y2="height + 55" stroke="#000000" style="stroke-width: .3;"> </line>
-        <text :x="width+32" :y="parseInt(height)/2+55">{{height}}</text>
+        <text :x="width+32" :y="parseInt(height)/2+55" style="font-size:30px">{{height}}</text>
 
         <GrotD :x="width + 30" :y="parseInt(height) + 55"></GrotD>
 

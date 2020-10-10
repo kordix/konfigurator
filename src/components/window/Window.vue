@@ -1,6 +1,6 @@
 <template>
-<div>
-    <div>
+<div style="transform:scale(0.6,0.6);transform-origin: 0% 0%">
+    <div style="">
         <!-- <label for="">Wysokość</label> -->
         <!-- <input v-model="height" type="number" step="50" min="300"> -->
         <!-- <label for="">Szerokość</label> -->
